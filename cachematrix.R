@@ -72,7 +72,7 @@ cacheSolve <- function(x, ...) {
   # if we're here, there's no cached value
   # compute it
   origMat <- x$get()
-  invMat <- solve(origMat) %*% origMat
+  invMat <- solve(origMat, ...)
   
   # cache it
   x$setInverse(invMat)
